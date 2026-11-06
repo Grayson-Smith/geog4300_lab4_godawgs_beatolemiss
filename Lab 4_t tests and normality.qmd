@@ -51,8 +51,6 @@ household_data <- read_csv("geog4300_lab4_godawgs_beatolemiss/data/pulse_2023.cs
 household_data_filtered <- household_data %>%
   select("THHLD_NUMKID","ND_DISPLACE") %>%
   filter(ND_DISPLACE != -88, ND_DISPLACE != -99)
-
-
 ```
 
 You'll be conducting a two-sample test of difference to look at whether the number of children differs between those displaced and not displaced. To know which test to use, you have to assess the normality of the THHLD_NUMKID variable. 
@@ -60,8 +58,19 @@ You'll be conducting a two-sample test of difference to look at whether the numb
 **Task 2** _Assess the normality of this variable using either a histogram OR a qq line. Make sure your plot is visible and interpret what it shows you about the normality of this variable._
 
 ```{r Task2}
+#Attempted a Shapiro test (out of curiosity; found that the sample size is far too large). Now attempting a QQ line. 
+
+#Including a QQ Plot for reference; however, I thought the histogram looked a bit more clear
+#ggplot(household_data_filtered,aes(sample=THHLD_NUMKID)) +
+  #stat_qq() +
+  #stat_qq_line()
+
+ggplot(household_data_filtered,aes(x=THHLD_NUMKID)) + 
+  geom_histogram()
 
 ```
+
+*Interpretation of Task 2*: Based on the histogram provided above (and a QQ plot created above -- but commented out for simplicity), this data is certainly not normally distributed. Instead, this data is exceptionally right-skewed, with the majority of the individuals reporting they have no children.
 
 ### Testing the difference in number of children.
 
