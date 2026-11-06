@@ -66,11 +66,12 @@ You'll be conducting a two-sample test of difference to look at whether the numb
   #stat_qq_line()
 
 ggplot(household_data_filtered,aes(x=THHLD_NUMKID)) + 
-  geom_histogram()
-
+  geom_histogram() +
+  labs(x = "Number of Children",
+       y = "Count")
 ```
 
-*Interpretation of Task 2*: Based on the histogram provided above (and a QQ plot created above -- but commented out for simplicity), this data is certainly not normally distributed. Instead, this data is exceptionally right-skewed, with the majority of the individuals reporting they have no children.
+*Interpretation of Task 2*: Based on the histogram provided above (and a QQ plot created above -- but commented out for simplicity), this data is certainly not normally distributed. Instead, this data is exceptionally right-skewed, with the majority (67.5% of the observations, according to the R "summary" feature) of the individuals reporting they have no children. As such, I will have to proceed with a test that does not rely on normally distributed data. 
 
 ### Testing the difference in number of children.
 
@@ -78,7 +79,7 @@ Now you can test whether the number of children differs between displaced and no
 
 **Task 3** _Based on the normality of the data, what is the appropriate statistical test for determining whether the number of children differs between these two groups? Explain why this test is appropriate and give a null and alternative hypothesis for this test_
 
-{Your answer here}
+
 
 **Task 4** _Run the test you identified in Task 3. Also calculate the mean for each dataset, which you can use to determine the nature of the difference--which group (if any) has more children._
 
