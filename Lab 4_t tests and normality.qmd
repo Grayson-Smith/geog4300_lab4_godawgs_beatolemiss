@@ -47,6 +47,11 @@ Load the dataset using read_csv, and also take a look at the two variables of in
 **Task 1** _Load the Pulse data and filter it to only valid responses._
 
 ```{r Task1}
+household_data <- read_csv("geog4300_lab4_godawgs_beatolemiss/data/pulse_2023.csv")
+household_data_filtered <- household_data %>%
+  select("THHLD_NUMKID","ND_DISPLACE") %>%
+  filter(ND_DISPLACE != -88, ND_DISPLACE != -99)
+
 
 ```
 
