@@ -198,7 +198,9 @@ Once you've calculated that estimate, map it out using the `states_albers` geopa
 
 **Disclosure of assistance:** Besides class materials, what other sources of assistance did you use while completing this lab? These can include input from classmates, relevant material identified through web searches (e.g., Stack Overflow), or assistance from ChatGPT or other AI tools. How did these sources support your own learning in completing this lab?
 
-{Response here.}
+The primary resources I utilized in completing this assingment were my classmates (especially Will, per usual), limited use of AI, and the use of a comprehensive list of statistical tests (linked below) from Stats Tutor to determine which test to use for Part 1 of this lab. 
+
+Statistical Test Source Link: https://www.statstutor.ac.uk/resources/uploaded/tutorsquickguidetostatistics.pdf
 
 **Lab reflection:** How do you feel about the work you did on this lab? Was it easy, moderate, or hard? What are the biggest things you learned by completing it?
 
