@@ -159,19 +159,14 @@ chisq_test_task8
 
 ```{r Task9}
 con_table_long_income_pct <- con_table_long_income %>%
-  #Transform the dataset into long format
-    pivot_longer(`1`:`8`,
-                 names_to="mag",
-                 values_to="count") %>%
-  #Calculate total tornado count
-    group_by(ST) %>% mutate(total=sum(count)) %>%
-  #Calculate the percentage, rounded to 1 digit
-    mutate(pct=round(count/sum(count)*100,1)) %>%
-  #Remove tornado raw count variable
-    select(-count) %>% 
-  #Make the dataset wide again, but this time with percentage
-    pivot_wider(names_from=mag,
-                values_from=pct)
+    pivot_longer(`1`:`5`,
+                 names_to= "Income",
+                 values_to= "count") %>%
+    mutate(total= sum(count)) %>%
+    mutate(pct = round(count/sum(count)*100, 2)) %>%
+    select(-count,-total) %>%
+    pivot_wider(names_from= Income,
+                values_from= pct)
 ```
 
 **Task 10** _Interpret the results of your analysis in tasks 8 and 9._ 
