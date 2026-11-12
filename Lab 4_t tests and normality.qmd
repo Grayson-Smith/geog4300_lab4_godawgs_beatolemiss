@@ -84,6 +84,19 @@ Now you can test whether the number of children differs between displaced and no
 **Task 4** _Run the test you identified in Task 3. Also calculate the mean for each dataset, which you can use to determine the nature of the difference--which group (if any) has more children._
 
 ```{r Task4}
+num_kids <- c(household_data_filtered$THHLD_NUMKID) #Made these two vectors for the number of children and displaced variables, as that seemed to be an easier way to insert those values into the wilcoxon test below
+displaced <- c(household_data_filtered$ND_DISPLACE)
+
+test_task4 <- wilcox.test(num_kids, displaced, paired = FALSE)
+test_task4
+
+mean_kids_displaced_households <- household_data_filtered %>%
+  filter(ND_DISPLACE == 1)
+mean(mean_kids_displaced_households$THHLD_NUMKID)
+
+mean_kids_not_displaced_households <- household_data_filtered %>%
+  filter(ND_DISPLACE == 2)
+mean(mean_kids_not_displaced_households$THHLD_NUMKID)
 
 ```
 
