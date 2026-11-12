@@ -160,7 +160,7 @@ chisq_test_task8
 ```{r Task9}
 con_table_long_income_pct <- con_table_long_income %>%
   #Transform the dataset into long format
-    pivot_longer(`0`:`8`,
+    pivot_longer(`1`:`8`,
                  names_to="mag",
                  values_to="count") %>%
   #Calculate total tornado count
