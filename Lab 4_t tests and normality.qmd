@@ -14,7 +14,7 @@ library(tidyverse)
 library(knitr)
 ```
 
-**Name: Grayson Smith**
+**Name: Grayson Smith** 
 
 ## One and two sample difference tests
 

@@ -19,6 +19,8 @@
   - [<span class="toc-section-number">2.5</span> Final submission
     stuff](#final-submission-stuff)
 
+**Name: Grayson Smith**
+
 ## One and two sample difference tests
 
 **Overview:** In this lab, you’ll be doing analysis with public use
