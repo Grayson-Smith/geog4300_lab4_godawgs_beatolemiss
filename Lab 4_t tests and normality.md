@@ -336,34 +336,29 @@ category 1 of ND_HOWLONG (“displaced less than a week”).*
 
 ``` r
 con_table_long_income_pct <- con_table_long_income %>%
-    pivot_longer(`1`:`5`,
-                 names_to= "Income",
-                 values_to= "count") %>%
+    pivot_longer(`1`:`5`, names_to= "ND_HOWLONG", values_to= "count") %>%
+  group_by(INCOME) %>%
     mutate(total= sum(count)) %>%
     mutate(pct = round(count/sum(count)*100, 2)) %>%
-    select(-count,-total) %>%
-    pivot_wider(names_from= Income,
+    select(-count, -total) %>%
+    pivot_wider(names_from= ND_HOWLONG,
                 values_from= pct)
 
-con_table_long_income_pct_cat1 <- con_table_long_income %>%
-  select(2) %>%
-  mutate(total = sum(`1`)) %>%
-  mutate(pct = round(`1`/sum(`1`)*100, 2)) %>%
-  select(-total)
+con_table_long_income_pct_cat1 <- con_table_long_income_pct[0:2]
 
 kable(con_table_long_income_pct_cat1)
 ```
 
-|   1 |   pct |
-|----:|------:|
-| 286 | 15.16 |
-| 162 |  8.59 |
-| 221 | 11.72 |
-| 316 | 16.76 |
-| 219 | 11.61 |
-| 317 | 16.81 |
-| 142 |  7.53 |
-| 223 | 11.82 |
+| INCOME |     1 |
+|-------:|------:|
+|      1 | 32.99 |
+|      2 | 38.57 |
+|      3 | 43.76 |
+|      4 | 48.77 |
+|      5 | 50.23 |
+|      6 | 56.21 |
+|      7 | 59.92 |
+|      8 | 54.39 |
 
 **Task 10** *Interpret the results of your analysis in tasks 8 and 9.*
 \* Do you reject the null hypothesis based on these results and why (or
@@ -433,20 +428,30 @@ class materials like in-class scripts) were my classmates (especially
 Will, per usual), limited use of AI, and the use of a comprehensive list
 of statistical tests (linked below) from Stats Tutor to determine which
 test to use for Part 1 of this lab. In terms of classmate help, I
-primarily collaborted with Will to ensure my answer to Task 4 was
-correct – as I had originally had made some mistakes on that question.
-Specifically, Will helped me realize that I needed to use the “~” syntax
-within the Wilcoxon test because the typical “,” only tests if there are
-differences in the values of each column (which there obviously was,
-given that one variable \[“ND_DISPLACE”\]) was simply a binary (1,2)
-variable while the other \[“THHLD_NUMKID”\] was ratio data) –
-information which is not valuable because there was a known difference
+primarily collaborted with Will to ensure my answers to Task 4 and Task
+9 were correct – as I had originally had made some mistakes on both of
+those question. Specifically, Will helped me realize that I needed to
+use the “~” syntax within the Wilcoxon test because the typical “,” only
+tests if there are differences in the values of each column (which there
+obviously was, given that one variable \[“ND_DISPLACE”\]) was simply a
+binary (1,2) variable while the other \[“THHLD_NUMKID”\] was ratio data)
+– information which is not valuable because there was a known difference
 in these values. Instead, Will indicated that I needed to use the “~”
 syntax to have the Wilcoxon test more correctly evaluate if there was a
 meaningful difference in the number of kids values for displaced or
 non-displaced (again, 1 or 2 for “ND_DISPLACE”) groups, rather than just
 if the values themselves were different on a row-by-row basis (again,
-was the case for the “,” syntax).
+was the case for the “,” syntax). In terms of Task 9, Will helped me to
+realize that I had made some slight errors in both calculating my totals
+and in forgetting to group by income – both of which resulted in me
+taking the percentages out of the entire total, rather than out of each
+income group (as the questioned dictated). This was very insightful, as
+it helped me get more accurate percentage with which to draw
+conclusions. Ultimately, the same trends were present in my original
+(incorrect) analysis – with the lower income groups still having higher
+proportions of longer displacement; however, the edits I made after
+conversation with Will made my numbers to support that claim more robust
+and accurate.
 
 Beyond that, I also used AI (primarily ChatGPT) in a limited way in this
 lab to troubleshoot issues I was not able to effectively fix. The most
