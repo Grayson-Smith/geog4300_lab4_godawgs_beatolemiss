@@ -79,24 +79,35 @@ Now you can test whether the number of children differs between displaced and no
 
 **Task 3** _Based on the normality of the data, what is the appropriate statistical test for determining whether the number of children differs between these two groups? Explain why this test is appropriate and give a null and alternative hypothesis for this test_
 
+It appears that the Wilcoxon rank-sum test is the most appropriate here, as it can be used for non-parametric data (which certainly is the case here) and is most appropriate when the independent variable is binary in nature (in this case, a 1 or 2 for if a family was displacd or not) and the dependent variable is quantitative (which is also certainly the case here, given the number of children is a ratio quantity). 
 
+To determine whether the number of children differs between the two independent variable groups (either displaced or not), I would define the following null and alternative hypotheses:
+
+Null Hypothesis: The number of children in households that have been displaced by natural disasters is the same as the number of children in non-displaced households. In other words, there is no statistically significant difference in number of children between the two groups.  
+Alternative Hypothesis: The number of children in households that have been displaced by natural disaster is *not* the same as the number of children in households that have not been displaced. In other words, there is a statistically significant difference in number of children between the two groups.  
 
 **Task 4** _Run the test you identified in Task 3. Also calculate the mean for each dataset, which you can use to determine the nature of the difference--which group (if any) has more children._
 
 ```{r Task4}
-num_kids <- c(household_data_filtered$THHLD_NUMKID) #Made these two vectors for the number of children and displaced variables, as that seemed to be an easier way to insert those values into the wilcoxon test below
+num_kids <- c(household_data_filtered$THHLD_NUMKID) #Made these two vectors for the number of children and displaced variables, as that seemed to be an easier way to insert those values into the Wilcoxon test below
 displaced <- c(household_data_filtered$ND_DISPLACE)
 
-test_task4 <- wilcox.test(num_kids, displaced, paired = FALSE)
+test_task4 <- wilcox.test(num_kids~displaced)
 test_task4
 
-mean_kids_displaced_households <- household_data_filtered %>%
+mean_kids_displaced <- household_data_filtered %>%
   filter(ND_DISPLACE == 1)
-mean(mean_kids_displaced_households$THHLD_NUMKID)
+mean(mean_kids_displaced$THHLD_NUMKID)
 
-mean_kids_not_displaced_households <- household_data_filtered %>%
+mean_kids_not_displaced <- household_data_filtered %>%
   filter(ND_DISPLACE == 2)
-mean(mean_kids_not_displaced_households$THHLD_NUMKID)
+mean(mean_kids_not_displaced$THHLD_NUMKID)
+
+#Plotting the distribution of both the displaced and non-displaced datasets demonstrates they have a very similar shape, indicating this test should be useful. 
+ggplot(mean_kids_displaced,aes(x=THHLD_NUMKID)) + 
+  geom_histogram() +
+  labs(x = "Number of Children (Displaced)",
+       y = "Count")
 
 ```
 
