@@ -11,6 +11,7 @@ editor_options:
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
+library(knitr)
 ```
 
 ## One and two sample difference tests
@@ -130,13 +131,20 @@ Again, look at the data dictionary to better understand how these two variables 
 **Task 6** _Reload the original, unfiltered Pulse dataset (not the one you used in parts 1 and 2). Select only observations for households displaced by a natural disaster using the ND_DISPLACE variable. Then filter for records with valid responses to INCOME and ND_HOWLONG. Call the head of the table with `kable` when done._
 
 ```{r Task6}
+household_data_part2 <- read_csv("geog4300_lab4_godawgs_beatolemiss/data/pulse_2023.csv") %>%
+  filter(ND_DISPLACE == 1) %>%
+  filter(INCOME != -88, INCOME != -99, ND_HOWLONG != -88, ND_HOWLONG != -99)
 
+kable(head(household_data_part2))
 ```
 
 **Task 7** _Create a contingency table of responses to the ND_HOWLONG variable by INCOME. The rows of this table should be the income groups and the columns should be the categorical variables showing time displaced. Call the table when you are done._
 
 ```{r Task7}
-
+con_table_long_income <- household_data_part2 %>%
+  count(ND_HOWLONG, INCOME, name = "count") %>%
+  pivot_wider(names_from= INCOME ,values_from=count,values_fill=0) %>%
+  select(-`-9`) 
 ```
 
 **Task 8** _Run a chi-square test on your contingency table to assess whether there are statistically significant differences in displacement time between these income groups. You'll likely need to delete the INCOME variable to do so._ 
