@@ -379,25 +379,26 @@ in lower income groups tended to have a harder time getting back in
 their homes in a timely manner. This is supported by the percentages
 displayed in the kable() from Task 9, and also in the general table of
 probabilities (as demonstrated in the `con_table_long_income_pct`
-table). In both cases, there are higher proportions of individuals in
-the “1” (less than \$25,000 a year) income group than there are in any
-other income group. This trend also generally holds for the other
-lower-income grups (i.e., 2-4), as each of those groups have higher
-proportions of people that took longer to return to their home than
-income groups 5-7. Income group 8 was a slight departure for this trend,
-as it had a somewhat larger proportion of people that took longer than 6
-months to return to their homes (or never returned at all); howwever,
-this might be explainable solely because these families can afford to be
-displaced for longer and thus did not feel a time pressure to return to
-their homes. In any case, it appears that there is an obvious
-relationship between income and time it takes to return home, with those
-that lack income-related resources typically having a harder time
-getting back in their homes faster. This (as noted above) is not
-entirely unexpected, as these families might have a harder time
-gathering resources to begin home repairs, and thus would likely be
-dependent on FEMA or other funds to begin that process (especially given
-they would be using their already-low income to find housing and other
-necessities while they are displaced).
+table). In both cases, there are lower proportions of individuals in the
+“1” income group that got back to their homes quickly (and higher
+proportions that took much longer to return). This trend also generally
+holds for the other lower-income groups (i.e., 2-4), as each of those
+groups have higher proportions of people that took longer to return to
+their home than income groups 5-7 (and thus had lower proportions of
+individuals that got back to their homes quickly). Income group 8 was a
+slight departure for this trend, as it had a somewhat larger proportion
+of people that took longer than 6 months to return to their homes (or
+never returned at all); howwever, this might be explainable solely
+because these families can afford to be displaced for longer and thus
+did not feel a time pressure to return to their homes. In any case, it
+appears that there is an obvious relationship between income and time it
+takes to return home, with those that lack income-related resources
+typically having a harder time getting back in their homes faster. This
+(as noted above) is not entirely unexpected, as these families might
+have a harder time gathering resources to begin home repairs, and thus
+would likely be dependent on FEMA or other funds to begin that process
+(especially given they would be using their already-low income to find
+housing and other necessities while they are displaced).
 
 ### Challenge Question:
 
