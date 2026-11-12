@@ -172,6 +172,10 @@ con_table_long_income_pct <- con_table_long_income %>%
 **Task 10** _Interpret the results of your analysis in tasks 8 and 9._ 
   * Do you reject the null hypothesis based on these results and why (or why not)? 
   * What do your results in Task 9 tell you about differences in how quickly households were able to return?
+  
+Task 10 Response: In this case, I do reject the null hypothesis that there is no statistically significant relationship between a family's time of displacement and their income group. In this case, this is strongly supported by a very small p-value (much less than 0.05) and a very large chi-squared statistic (210.51, much larger than the 41.337 needed for significance at 95% confidence at df = 28). As such, it appears clear that there is a relationship between the time it takes for a family to return home and their income.
+
+
 
 ### Challenge Question:
 Calculate and map the percentage of households reporting displacement (ND_DISPLACE) by state. To do so, you'll need to start with a version of the dataset that excludes non-valid responses and then calculate the percentage displaced by state.
