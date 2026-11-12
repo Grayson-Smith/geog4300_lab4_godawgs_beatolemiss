@@ -115,7 +115,11 @@ ggplot(mean_kids_displaced,aes(x=THHLD_NUMKID)) +
   * Do you reject the null hypothesis? Why or why not? 
   * Based on the test result and the group means, what can we conclude about differences in the number of children between these two groups?
   
-Task 5 Response: Based on the test performed above, I do reject the null hypothesis that there is no difference between the number of kids per household betweeen the displaced and non-displaced groups. I come to this conclusion because the Wilcoxon rank-sum test performed above yielded an extremely small p-value (much less than 0.05, if we were looking for 95% confidence) and a very large W value (which . 
+Task 5 Response: Based on the test performed above, I do reject the null hypothesis that there is no difference between the number of kids per household betweeen the displaced and non-displaced groups. I come to this conclusion because the Wilcoxon rank-sum test performed above yielded an extremely small p-value (much less than 0.05, if we were looking for 95% confidence). The interpretation for the W value seems less clear, the very large number returned for that value also lends confidence to the idea that there is a staistiaclly singificant difference between these two groups. 
+
+In terms of magnitude and direction, it appears that the number of children per household tends to be higher for families that have been displaced than those that have not, with the displaced group averaging 0.75 children (indicative of a higher overall distribution, given that you cannot have a 3/4th child) and the non-displaced group averaging 0.59 children per household (again, indicative of a lower overall distribution, not the presence of half-children). Although this difference does not appear large, it certainly is not neglibile (especially given that it is statistically significant) given that the highest number of children recorded in the dataset is only 5. 
+
+Together, this indicates that there is a statistically significant difference in nummber of kids between households that have been displaced by natural disasters and those that have not (based on the Pulse survey data used herein). On average, households that had been displaced had more children than those that had not, with the difference being somewhat small, but certainly not negligible. 
 
 ### Identifying differences in time displaced by natural disasters across income groups
 
