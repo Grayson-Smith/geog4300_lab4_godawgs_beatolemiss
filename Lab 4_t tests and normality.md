@@ -388,7 +388,7 @@ their home than income groups 5-7 (and thus had lower proportions of
 individuals that got back to their homes quickly). Income group 8 was a
 slight departure for this trend, as it had a somewhat larger proportion
 of people that took longer than 6 months to return to their homes (or
-never returned at all); howwever, this might be explainable solely
+never returned at all); however, this might be explainable solely
 because these families can afford to be displaced for longer and thus
 did not feel a time pressure to return to their homes. In any case, it
 appears that there is an obvious relationship between income and time it
