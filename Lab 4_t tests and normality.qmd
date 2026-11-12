@@ -48,7 +48,7 @@ Load the dataset using read_csv, and also take a look at the two variables of in
 **Task 1** _Load the Pulse data and filter it to only valid responses._
 
 ```{r Task1}
-household_data <- read_csv("geog4300_lab4_godawgs_beatolemiss/data/pulse_2023.csv")
+household_data <- read_csv("data/pulse_2023.csv")
 household_data_filtered <- household_data %>%
   select("THHLD_NUMKID","ND_DISPLACE") %>%
   filter(ND_DISPLACE != -88, ND_DISPLACE != -99)
@@ -131,7 +131,7 @@ Again, look at the data dictionary to better understand how these two variables 
 **Task 6** _Reload the original, unfiltered Pulse dataset (not the one you used in parts 1 and 2). Select only observations for households displaced by a natural disaster using the ND_DISPLACE variable. Then filter for records with valid responses to INCOME and ND_HOWLONG. Call the head of the table with `kable` when done._
 
 ```{r Task6}
-household_data_part2 <- read_csv("geog4300_lab4_godawgs_beatolemiss/data/pulse_2023.csv") %>%
+household_data_part2 <- read_csv("data/pulse_2023.csv") %>%
   filter(ND_DISPLACE == 1) %>%
   filter(INCOME != -88, INCOME != -99, ND_HOWLONG != -88, ND_HOWLONG != -99)
 
