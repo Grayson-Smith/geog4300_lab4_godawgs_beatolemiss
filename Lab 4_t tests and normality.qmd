@@ -114,6 +114,8 @@ ggplot(mean_kids_displaced,aes(x=THHLD_NUMKID)) +
 **Task 5** _Interpret the results of the analysis you did in task 4._ 
   * Do you reject the null hypothesis? Why or why not? 
   * Based on the test result and the group means, what can we conclude about differences in the number of children between these two groups?
+  
+Task 5 Response: Based on the test performed above, I do reject the null hypothesis that there is no difference between the number of kids per household betweeen the displaced and non-displaced groups. I come to this conclusion because the Wilcoxon rank-sum test performed above yielded an extremely small p-value (much less than 0.05, if we were looking for 95% confidence) and a very large W value (which . 
 
 ### Identifying differences in time displaced by natural disasters across income groups
 
